@@ -1,0 +1,38 @@
+.grid-container {
+  display: grid;
+ /* grid-template-columns: auto auto auto;*/
+  grid-template-areas:
+    'dato camilla desarrollador'
+    'dato camilla desarrollador';
+  gap: 10px;
+  /*background-color: #2196F3;*/
+  padding: 10px;
+}
+
+.desarrolladores {
+  grid-area: desarrollador;
+}
+
+.datos {
+  grid-area: dato;
+}
+
+.camilla {
+  grid-area: camilla;
+}
+
+footer {
+  background-color: #1A1A1A;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  color: white;
+  padding: 2rem 2rem;
+}
+
+h1 {
+  font-family: JavaneseText;
+  text-align: center;
+}
+
