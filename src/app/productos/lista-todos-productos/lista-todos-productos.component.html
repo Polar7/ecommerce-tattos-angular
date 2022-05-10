@@ -1,14 +1,56 @@
-<div class="container p-3">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let producto of productos">
-      <div class="card h-100 text-white bg-secondary mb-3">
-        <img [src]="producto.urlImagen" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{producto.nombre}}</h5>
-          <p class="card-text">$ {{producto.precioVenta}}</p>
-        </div>
-        <a href="#" class="btn btn-dark">Agregar a carrito</a>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="row">
+  <div class="col-8">
+    <div class="container p-3">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let producto of productos">
+          <div class="card h-100 text-white bg-secondary mb-3">
+            <img [src]="producto.urlImagen" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{producto.nombre}}</h5>
+              <p class="card-text">$ {{producto.precioVenta}}</p>
+              <p class="card-text">Stock: {{producto.cantidadStock}}</p>
+            </div>
+            <button (click)="agregarACarrito(producto)" class="btn btn-dark">Agregar a carrito</button>
+            <button (click)="eliminarDeCarrito(producto)" class="btn btn-danger">Eliminar de carrito</button>
+            <!-- <a href="#" class="btn btn-dark">Agregar a carrito</a>-->
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="col-4">
+     <h2>Carrito de compras</h2>
+     <table class="table table-primary table-striped">
+       <thead>
+       <tr>
+         <th>Nombre</th>
+         <th>Cantidad</th>
+         <th>Precio</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor="let productoCompra of productosCompra">
+         <th>{{productoCompra.nombre}}</th>
+         <th>{{productoCompra.cantidad}}</th>
+         <th>{{productoCompra.total}}</th>
+       </tr>
+       </tbody>
+     </table>
+     <p class="text-end">Total ${{totalCarrito}}</p>
+     <div class="text-end">
+       <div class="input-group mb-3">
+         <span class="input-group-text" id="basic-addon1">Usuario</span>
+         <input [(ngModel)]="cliente" type="text" class="form-control" placeholder="Id del usuario" aria-label="Username" aria-describedby="basic-addon1">
+       </div>
+       <select  [(ngModel)]="medioPago" class="form-select" aria-label="Default select example">
+         <option value="" selected disabled>Escoja medio de pago</option>
+         <option value="e">Efectivo</option>
+         <option value="c">Tarjeta de credito</option>
+         <option value="d">Tarjeta debito</option>
+       </select>
+       <button (click)="limpiarCompra()" type="button" class="btn btn-outline-danger">Limpiar</button>
+       <button (click)="guardarCompra()" type="button" class="btn btn-outline-success">Comprar</button>
+     </div>
+   </div>
+ </div>
+

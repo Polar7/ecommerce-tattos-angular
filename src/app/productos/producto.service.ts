@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ProductoModel} from "./producto.model";
+import {CompraModel} from "./compra.model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class ProductoService {
 
   getCamisetas(): Observable<ProductoModel[]> {
     return this.http.get<ProductoModel[]>(`${this.urlTattos}/productos/tipos-productos/3`);
+  }
+
+  guardarCompra(compra: CompraModel): Observable<CompraModel> {
+    return this.http.post<CompraModel>(`${this.urlTattos}/compras`, compra);
   }
 }

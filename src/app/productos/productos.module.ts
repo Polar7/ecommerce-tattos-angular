@@ -4,6 +4,7 @@ import { ListaTodosProductosComponent } from './lista-todos-productos/lista-todo
 import { ListaTatuajesComponent } from './lista-tatuajes/lista-tatuajes.component';
 import { ListaJoyasComponent } from './lista-joyas/lista-joyas.component';
 import { ListaCamisetasComponent } from './lista-camisetas/lista-camisetas.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -15,7 +16,8 @@ import { ListaCamisetasComponent } from './lista-camisetas/lista-camisetas.compo
     ListaCamisetasComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     ListaTodosProductosComponent
