@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Correo</th>
+    <th scope="col">N° Compras Realizadas</th>
+    <th scope="col">Ver compras hechas</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cliente of listaClientes">
+    <th scope="row">{{cliente.idCliente}}</th>
+    <td>{{cliente.nombreCompleto}}</td>
+    <td>{{cliente.correo}}</td>
+    <td>{{cliente.compras.length}}</td>
+    <td> <button class="btn btn-secondary" type="submit" routerLink="compras/clientes/{{cliente.idCliente}}" >Ver</button> </td>
+  </tr>
+  </tbody>
+</table>

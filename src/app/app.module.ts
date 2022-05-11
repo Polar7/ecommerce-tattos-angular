@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {SharedModule} from "./shared/shared.module";
 import {ProductosModule} from "./productos/productos.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ClientesModule} from "./clientes/clientes.module";
+import {ComprasModule} from "./compras/compras.module";
 
 @NgModule({
     declarations: [
@@ -17,7 +20,10 @@ import {ProductosModule} from "./productos/productos.module";
         AppRoutingModule,
         HttpClientModule,
         SharedModule,
-        ProductosModule
+        ProductosModule,
+        ClientesModule,
+        ComprasModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

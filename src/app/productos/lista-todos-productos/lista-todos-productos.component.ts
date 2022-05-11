@@ -3,6 +3,7 @@ import {ProductoModel} from "../producto.model";
 import {ProductoService} from "../producto.service";
 import {ProductoCompraModel} from "../producto-compra.model";
 import {CompraModel} from "../compra.model";
+import {ComprasService} from "../../compras/compras.service";
 
 @Component({
   selector: 'app-lista-todos-productos',
@@ -17,7 +18,7 @@ export class ListaTodosProductosComponent implements OnInit {
   cliente: string = "";
   medioPago: string = "";
 
-  constructor(private productoService: ProductoService) { }
+  constructor(private productoService: ProductoService, private compraService: ComprasService) { }
 
   ngOnInit(): void {
     this.productoService.getTodosProductos().subscribe(data => {this.productos = data})
@@ -76,7 +77,7 @@ export class ListaTodosProductosComponent implements OnInit {
     {
       let compra: CompraModel = new CompraModel(this.cliente, new Date(), this.medioPago, this.productosCompra);
 
-      this.productoService.guardarCompra(compra).subscribe((respuesta: any) => {
+      this.compraService.guardarCompra(compra).subscribe((respuesta: any) => {
         alert("Se realizo la compra");
       }, error => {
         if(error.error.status == 500){

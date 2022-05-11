@@ -1,0 +1,17 @@
+<div class="container p-2">
+  <form>
+    <div class="mb-3">
+      <label for="inputId" class="form-label">Id</label>
+      <input #clienteIdInput type="text" class="form-control" id="inputId" aria-describedby="emailHelp" placeholder="Un id unico">
+    </div>
+    <div class="mb-3">
+      <label for="inputNombre" class="form-label">Nombre</label>
+      <input #clienteNombreInput type="text" class="form-control" id="inputNombre" aria-describedby="emailHelp" placeholder="Tu genial nombre">
+    </div>
+    <div class="mb-3">
+      <label for="inputCorreo" class="form-label">Correo</label>
+      <input #clienteCorreoInput type="email" class="form-control" id="inputCorreo" aria-describedby="emailHelp" placeholder="Tu correo magestuoso">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="registrarCliente(clienteIdInput.value, clienteNombreInput.value, clienteCorreoInput.value)">Registrarse</button>
+  </form>
+</div>

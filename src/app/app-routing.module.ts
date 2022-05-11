@@ -3,16 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import {InicioComponent} from "./landing/inicio/inicio.component";
 import {ContactoComponent} from "./landing/contacto/contacto.component";
 import {ListaTodosProductosComponent} from "./productos/lista-todos-productos/lista-todos-productos.component";
-import {ListaTatuajesComponent} from "./productos/lista-tatuajes/lista-tatuajes.component";
-import {ListaJoyasComponent} from "./productos/lista-joyas/lista-joyas.component";
-import {ListaCamisetasComponent} from "./productos/lista-camisetas/lista-camisetas.component";
+import {ListaTodosClientesComponent} from "./clientes/lista-todos-clientes/lista-todos-clientes.component";
+import {ListaProdutoTipoProductoComponent} from "./productos/lista-produto-tipo-producto/lista-produto-tipo-producto.component";
+import {ListComprasClientesComponent} from "./compras/list-compras-clientes/list-compras-clientes.component";
+import {RegistrarClienteComponent} from "./clientes/registrar-cliente/registrar-cliente.component";
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'productos', component:ListaTodosProductosComponent},
-  {path: 'productos/tatuajes', component:ListaTatuajesComponent},
-  {path: 'productos/joyas', component:ListaJoyasComponent},
-  {path: 'productos/camisetas', component:ListaCamisetasComponent},
+  {path: 'productos/tipo-producto/:id', component:ListaProdutoTipoProductoComponent},
+  {path: 'clientes', component:ListaTodosClientesComponent},
+  {path: 'clientes/compras/clientes/:id', component:ListComprasClientesComponent},
+  {path: 'clientes/registrar', component: RegistrarClienteComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: '**', redirectTo: 'inicio'}
 ];
